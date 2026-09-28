@@ -1,0 +1,14 @@
+[Unit]
+Description=Veltrix Cloud Pterodactyl Manager Bot
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/veltrix-ptero-manager
+ExecStart=/opt/veltrix-ptero-manager/venv/bin/python3 /opt/veltrix-ptero-manager/bot.py
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
